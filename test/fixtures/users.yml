@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  login_id: MyString
+  name: MyString
+  experience: 1
+  email: MyString
+  rank: 1
+  lv: 1
+
+two:
+  login_id: MyString
+  name: MyString
+  experience: 1
+  email: MyString
+  rank: 1
+  lv: 1

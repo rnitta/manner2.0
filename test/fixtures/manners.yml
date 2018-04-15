@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  pv: 1
+  title: MyText
+  description: MyText
+  star: 1
+
+two:
+  user: two
+  pv: 1
+  title: MyText
+  description: MyText
+  star: 1
