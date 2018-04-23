@@ -1,0 +1,16 @@
+.header-bottom-nav{
+  display: flex;
+  padding: 0 0 0 10px;
+}
+.card-link{
+  flex-grow: 1;
+    padding: 10px 0 10px 0;
+}
+.card-link:hover{
+  background-color: #dddddd;
+}
+.card-link>a{
+display: block;
+color: #000;
+text-align: center
+}

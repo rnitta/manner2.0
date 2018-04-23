@@ -2,6 +2,7 @@
 Rails.application.routes.draw do
   resources :users, only: %i[new create show]
   resources :manners, only: %i[new create show edit update destroy index]
+  get 'mock/top', to: 'mock#top'
   get '/login', to: 'sessions#new'
   post 'login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
