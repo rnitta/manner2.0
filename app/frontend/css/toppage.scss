@@ -1,16 +1,112 @@
-.header-bottom-nav{
+.header-bottom-nav {
   display: flex;
   padding: 0 0 0 10px;
 }
-.card-link{
+
+.card-link {
   flex-grow: 1;
-    padding: 10px 0 10px 0;
+  padding: 10px 0;
 }
-.card-link:hover{
+
+.card-link:hover {
   background-color: #dddddd;
 }
-.card-link>a{
-display: block;
-color: #000;
-text-align: center
+
+.card-link > a {
+  display: block;
+  color: #000;
+  text-align: center;
+}
+
+.main-container {
+  font-family: "游明朝", "YuMincho", "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", serif;
+}
+
+.side-container {
+  .card {
+    padding: 10px;
+    margin-bottom: 20px;
+  }
+}
+
+.content-area {
+  margin-top: 20px;
+}
+
+.header-img {}
+
+p {
+  margin-bottom: 0;
+}
+
+.subject-card {
+  padding: 20px 10px;
+  border: 8px solid #444444;
+  box-shadow: 2px 2px 6px;
+  margin-bottom: 20px;
+}
+
+.subject-text {
+  font-size: 24px;
+}
+
+.subject-posted-by {
+  color: #797979;
+}
+
+.subject-container {
+  padding: 10px;
+}
+
+.star-buttons {
+  font-size: 18px;
+}
+
+.answer-text {
+  background-color: #f9f9f9;
+  padding: 20px;
+  margin: 10px 10px 0;
+}
+
+.answer-bottom {
+  background-color: #f3f3f3;
+  margin: 0 10px 10px;
+  padding: 0 10px;
+}
+
+.read-more {
+  background-color: #fff6e6;
+  padding: 5px;
+  text-align: center;
+  border-radius: 10px;
+}
+
+body {
+  margin-bottom: 100px;
+}
+
+.sns-buttons {
+  font-family: "FontAwesome";
+  color: #696969;
+}
+
+i {
+  text-decoration: none;
+  font-style: normal;
+}
+
+.like-button {
+  font-family: "FontAwesome";
+
+  .not-liked {
+    color: #b1b1b1;
+  }
+
+  .liked {
+    color: #ff00a1;
+  }
+}
+
+.subject-container {
+  margin-bottom: 30px;
 }
