@@ -1,31 +1,61 @@
+body {
+  margin-bottom: 100px;
+}
+
+
 .header-bottom-nav {
+  background-color: #343a40;
+  color: #fff;
   display: flex;
-  padding: 0 0 0 10px;
+  flex-direction: row;
+  justify-content: space-around;
+  border-radius: 1em;
+  .card-link {
+    flex-grow: 1;
+  }
+
+  .card-link:hover {
+    background-color: #dddddd;
+  }
+
+  .card-link > a {
+    color: white;
+    padding: 10px 0;
+    display: block;
+    text-align: center;
+  }
+
 }
 
-.card-link {
-  flex-grow: 1;
-  padding: 10px 0;
+.btn-login {
+  background-color: #EEF9FF;
+  color: #5B5B5B;
 }
 
-.card-link:hover {
-  background-color: #dddddd;
+.btn-register {
+  background-color: #EEF9FF;
+  color: #5B5B5B;
 }
 
-.card-link > a {
-  display: block;
-  color: #000;
-  text-align: center;
-}
-
-.main-container {
-  font-family: "游明朝", "YuMincho", "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", serif;
-}
+.main-container {}
 
 .side-container {
   .card {
     padding: 10px;
     margin-bottom: 20px;
+  }
+
+  .read-more-user-ranking {
+    color: #5B5B5B;
+    background-color: #fff;
+    padding: 5px;
+    text-align: center;
+    border: 1px solid #dddddd;
+    border-radius: 10px;
+  }
+
+  .read-more-user-ranking:hover {
+    background-color: #EEF9FF;
   }
 }
 
@@ -33,80 +63,78 @@
   margin-top: 20px;
 }
 
-.header-img {}
-
 p {
   margin-bottom: 0;
 }
 
-.subject-card {
-  padding: 20px 10px;
-  border: 8px solid #444444;
-  box-shadow: 2px 2px 6px;
-  margin-bottom: 20px;
-}
-
-.subject-text {
-  font-size: 24px;
-}
-
-.subject-posted-by {
-  color: #797979;
-}
-
 .subject-container {
   padding: 10px;
+  margin-bottom: 50px;
+  .subject-card {
+    padding: 20px 10px;
+    border: 8px solid #AAD6EC;
+    box-shadow: 2px 2px 6px;
+    margin-bottom: 20px;
+
+    .subject-text {
+      font-family: "游明朝", "YuMincho", "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", serif;
+      font-size: 30px;
+    }
+
+    .subject-posted-by {
+      color: #797979;
+    }
+  }
+  .read-more-manners {
+    color: #5B5B5B;
+    background-color: #fff;
+    padding: 5px;
+    text-align: center;
+    border: 1px solid #dddddd;
+    border-radius: 10px;
+  }
+
+  .read-more-manners:hover {
+    background-color: #EEF9FF;
+  }
 }
 
-.star-buttons {
-  font-size: 18px;
+.answer-container {
+  box-shadow: 2px 2px 4px gray;
+  margin: 10px 10px 30px;
 }
 
 .answer-text {
-  background-color: #f9f9f9;
-  padding: 20px;
-  margin: 10px 10px 0;
+  background-color: #fff;
+  padding: 24px;
 }
 
 .answer-bottom {
-  background-color: #f3f3f3;
-  margin: 0 10px 10px;
+  background-color: #5B5B5B;
+  display: flex;
+  flex-direction: row;
   padding: 0 10px;
-}
 
-.read-more {
-  background-color: #fff6e6;
-  padding: 5px;
-  text-align: center;
-  border-radius: 10px;
-}
-
-body {
-  margin-bottom: 100px;
-}
-
-.sns-buttons {
-  font-family: "FontAwesome";
-  color: #696969;
-}
-
-i {
-  text-decoration: none;
-  font-style: normal;
-}
-
-.like-button {
-  font-family: "FontAwesome";
-
-  .not-liked {
-    color: #b1b1b1;
+  .sns-buttons {
+    font-family: "FontAwesome";
+    color: #fff;
   }
 
-  .liked {
-    color: #ff00a1;
+  i {
+    text-decoration: none;
+    font-style: normal;
   }
-}
 
-.subject-container {
-  margin-bottom: 30px;
+  .like-button {
+    font-family: "FontAwesome";
+    color: #fff;
+
+    .not-liked {
+      color: #fff;
+    }
+
+    .liked {
+      color: #FC9D9D;
+    }
+  }
 }

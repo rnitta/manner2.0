@@ -1,6 +1,22 @@
-.navbar{
-  margin-bottom: 10px;
+body {
+  background-color: #EEF9FF;
 }
-.nav-button{
+
+.nav-button {
   margin-right: 10px;
+}
+
+.header-img-container {
+  height: 250px;
+  margin-bottom: 10px;
+  background-color: #FC9D9D;
+
+  img {
+    max-width: 130%;
+  }
+}
+
+.container-fluid {
+  padding-right: 0px;
+  padding-left: 0px;
 }
