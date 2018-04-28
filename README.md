@@ -1,24 +1,10 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# 登録フロー
+`users/new`
+メールアドレスだけ登録
 
-Things you may want to cover:
+`users/init/:id`
+deviseでメールアドレス確認後の初回情報登録
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+→サインアップ完了・ログイン

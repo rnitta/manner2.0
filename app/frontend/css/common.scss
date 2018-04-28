@@ -1,10 +1,21 @@
 body {
   background-color: #EEF9FF;
 }
+nav.navbar{
+  .nav-button {
+    margin-right: 10px;
+  }
+  .btn-login {
+    background-color: #EEF9FF;
+    color: #5B5B5B;
+  }
 
-.nav-button {
-  margin-right: 10px;
+  .btn-register {
+    background-color: #EEF9FF;
+    color: #5B5B5B;
+  }
 }
+
 
 .header-img-container {
   height: 250px;
@@ -19,4 +30,9 @@ body {
 .container-fluid {
   padding-right: 0px;
   padding-left: 0px;
+}
+p.notice, p.alert{
+  padding: 0;
+  margin: 0;
+  border: 0;
 }
