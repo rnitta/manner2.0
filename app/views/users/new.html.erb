@@ -1,7 +1,0 @@
-<h1>メールアドレス登録</h1>
-<%= form_for(:users, url: registration_path(:users)) do |f| %>
-  <%= devise_error_messages! %>
-  <%= f.label :email, 'メールアドレス' %>
-  <%= f.text_field :email %>
-  <%= f.submit "登録" %>
-<% end %>

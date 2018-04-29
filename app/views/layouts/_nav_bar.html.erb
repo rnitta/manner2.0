@@ -3,7 +3,7 @@
   <div class="collapse navbar-collapse" id="navbarText">
     <ul class="navbar-nav">
       <li class="nav-item">
-        <a class="nav-link" href="#">今日のお題</a>
+        <%= link_to "トップ", root_path, class: 'nav-link' %>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">今週のベストマナー</a>
@@ -16,13 +16,13 @@
   <ul class="navbar-nav mr-auto">
     <% if user_signed_in? %>
       ログイン後のアレ
-      <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'navbar-link'  %>
+      <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'navbar-link' %>
     <% else %>
       <li class="nav-item nav-button">
-        <button type="button" class="btn btn-login">ログイン</button>
+        <%= link_to "ログイン", new_user_session_path, class: 'btn btn-login' %>
       </li>
       <li class="nav-item">
-        <button type="button" class="btn btn-register">登録</button>
+        <%= link_to "登録", new_user_registration_path, class: 'btn btn-register' %>
       </li>
 
     <% end %>

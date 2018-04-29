@@ -2,11 +2,14 @@
 Rails.application.routes.draw do
   root to: 'mock#top'
   devise_for :users, controllers:  {
-    # deviseのコントローラをオーバーライドしてるやつ
-    registrations: 'users/registrations'
+    # deviseのコントローラをオーバーライドしてるやつを呼ぶ設定
+    registrations: 'users/registrations',
+    sessions: 'users/sessions',
+    confirmations: 'users/confirmations'
   }
+  get 'users/mypage', to: 'users#mypage'
   resources :users, only: %i[show]
-  get 'users/init', to: 'users#init'
+  resources :categories, only: %i[new create show edit update destroy index]
   resources :manners, only: %i[new create show edit update destroy index]
   get 'mock/top', to: 'mock#top'
 end
