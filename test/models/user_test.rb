@@ -3,14 +3,10 @@
 # Table name: users
 #
 #  id                     :integer          not null, primary key
-#  login_id               :string           not null
-#  name                   :string           not null
-#  register_ip            :string
-#  login_ip               :string
-#  exp                    :integer          default(0), not null
-#  rank                   :integer          default(0), not null
+#  login_id               :string
+#  name                   :string           default(""), not null
+#  profile                :string           default(""), not null
 #  lv                     :integer          default(0), not null
-#  password_digest        :string           not null
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
 #  email                  :string           default(""), not null
@@ -27,6 +23,7 @@
 #  confirmed_at           :datetime
 #  confirmation_sent_at   :datetime
 #  unconfirmed_email      :string
+#  admin                  :boolean          default(FALSE)
 #
 
 require 'test_helper'

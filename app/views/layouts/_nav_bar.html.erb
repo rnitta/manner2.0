@@ -16,6 +16,7 @@
   <ul class="navbar-nav mr-auto">
     <% if user_signed_in? %>
       ログイン後のアレ
+      <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'navbar-link'  %>
     <% else %>
       <li class="nav-item nav-button">
         <button type="button" class="btn btn-login">ログイン</button>

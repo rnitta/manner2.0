@@ -10,4 +10,6 @@ import 'bootstrap';
 import '../js/application.js';
 import '../css/application.scss';
 require.context('../img', true, /\.(png|jpg|jpeg|svg)$/);
-console.log('Hello World from Webpacker')
+// data-methodとか動かすために必要みたい。あんじゃそら。
+import Rails from 'rails-ujs';
+Rails.start();
