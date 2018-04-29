@@ -13,7 +13,7 @@
 #
 
 class Category < ApplicationRecord
-  belongs_to :manner
+  has_many :manners
   validates :name, presence: true, length: { maximum: 255 }
   validates :friendly_id, presence: true, length: { maximum: 255 }
 end
