@@ -1,0 +1,24 @@
+<%= render partial: "shared/nav_bar" %>
+<%= render partial: "shared/header_img" %>
+<div class="container">
+  <%= render partial: "shared/header_nav" %>
+  <h1>お題投稿</h1>
+  # プレビューつけたい
+  <%= form_for @subject, url: { action: :create } do |f| %>
+  <%= f.label :title, 'お題' %>
+  <%= f.text_field :title %>
+  <%= f.label :category_id, 'カテゴリ' %>
+  <%= f.select :category_id, Category.all.pluck(:name, :id)%>
+
+  <% if @subject.errors.any? %>
+    <h2>エラー</h2>
+    <ul>
+      <% @subject.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  <% end %>
+  <%= f.submit "作成" %>
+<% end %>
+
+</div>

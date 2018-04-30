@@ -2,7 +2,6 @@ body {
   margin-bottom: 100px;
 }
 
-
 .header-bottom-nav {
   background-color: #343a40;
   color: #fff;
@@ -10,6 +9,7 @@ body {
   flex-direction: row;
   justify-content: space-around;
   border-radius: 1em;
+
   .card-link {
     flex-grow: 1;
   }
@@ -24,7 +24,6 @@ body {
     display: block;
     text-align: center;
   }
-
 }
 
 .main-container {}
@@ -58,23 +57,6 @@ p {
 }
 
 .subject-container {
-  padding: 10px;
-  margin-bottom: 50px;
-  .subject-card {
-    padding: 40px 20px;
-    border: 8px solid #AAD6EC;
-    box-shadow: 2px 2px 6px;
-    margin-bottom: 20px;
-
-    .subject-text {
-      font-family: "游明朝", "YuMincho", "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", serif;
-      font-size: 30px;
-    }
-
-    .subject-posted-by {
-      color: #797979;
-    }
-  }
   .read-more-manners {
     color: #5B5B5B;
     background-color: #fff;

@@ -1,17 +1,13 @@
-<%= render partial: "layouts/nav_bar" %>
-<%= render partial: "layouts/header_img" %>
+<%= render partial: "shared/nav_bar" %>
+<%= render partial: "shared/header_img" %>
 <div class="container">
-<%= render partial: "layouts/header_nav" %>
-
+  <%= render partial: "shared/header_nav" %>
 
   <div class="row content-area">
     <div class="col-md-1"></div>
     <div class="main-container col-md-7">
       <div class="card subject-container">
-        <div class="subject-card">
-          <p class="subject-text">採用面接でのマナーを教えてください。</p>
-          <p class="subject-posted-by text-right">(テーマ提供: 管理人)</p>
-        </div>
+      <%= render partial: "shared/subject_container", locals: { title: '採用面接でのマナー', posted_by: '管理人'} %>
 
         <div class="answer-container">
           <p class="answer-text">一発芸に備えて、動きやすい服装で訪問する。</p>
@@ -57,67 +53,59 @@
         </a>
       </div>
 
-          <div class="card subject-container">
-            <div class="subject-card">
-              <p class="subject-text">合コンでのマナーを教えてください。</p>
-              <p class="subject-posted-by text-right">(テーマ提供: 管理人)</p>
-            </div>
+      <div class="card subject-container">
+        <div class="subject-card">
+          <p class="subject-text">合コンでのマナーを教えてください。</p>
+          <p class="subject-posted-by text-right">(テーマ提供: 管理人)</p>
+        </div>
 
-            <div class="answer-container">
-              <p class="answer-text">女性蔑視を避けるために、女性に多めに支払ってもらう。</p>
-              <div class="answer-bottom">
-                <div class="sns-buttons ml-0 mr-auto">
-                  <i class="fab fa-twitter fa-fw fa-lg"></i>
-                  <i class="fab fa-facebook-square fa-fw fa-lg"></i>
-                </div>
-                <div class="like-button mr-0">
-                  <i class="far fa-heart liked"></i>
-                  <span class="like-count">1</span>
-                </div>
-              </div>
+        <div class="answer-container">
+          <p class="answer-text">女性蔑視を避けるために、女性に多めに支払ってもらう。</p>
+          <div class="answer-bottom">
+            <div class="sns-buttons ml-0 mr-auto">
+              <i class="fab fa-twitter fa-fw fa-lg"></i>
+              <i class="fab fa-facebook-square fa-fw fa-lg"></i>
             </div>
-            <div class="answer-container">
-              <p class="answer-text">相手に不快な思いをさせないように、話す際に相手の目を見ないようにする。</p>
-              <div class="answer-bottom">
-                <div class="sns-buttons ml-0 mr-auto">
-                  <i class="fab fa-twitter fa-fw fa-lg"></i>
-                  <i class="fab fa-facebook-square fa-fw fa-lg"></i>
-                </div>
-                <div class="like-button mr-0">
-                  <i class="far fa-heart liked"></i>
-                  <span class="like-count">1</span>
-                </div>
-              </div>
+            <div class="like-button mr-0">
+              <i class="far fa-heart liked"></i>
+              <span class="like-count">1</span>
             </div>
-            <div class="answer-container">
-              <p class="answer-text">時間にルーズだと思われないように、１次会の後は速やかに帰る。</p>
-              <div class="answer-bottom">
-                <div class="sns-buttons ml-0 mr-auto">
-                  <i class="fab fa-twitter fa-fw fa-lg"></i>
-                  <i class="fab fa-facebook-square fa-fw fa-lg"></i>
-                </div>
-                <div class="like-button mr-0">
-                  <i class="far fa-heart not-liked"></i>
-                  <span class="like-count">0</span>
-                </div>
-              </div>
-            </div>
-            <a href="#" class="btn read-more-manners">
-              合コンでのマナーをもっと読む
-            </a>
           </div>
+        </div>
+        <div class="answer-container">
+          <p class="answer-text">相手に不快な思いをさせないように、話す際に相手の目を見ないようにする。</p>
+          <div class="answer-bottom">
+            <div class="sns-buttons ml-0 mr-auto">
+              <i class="fab fa-twitter fa-fw fa-lg"></i>
+              <i class="fab fa-facebook-square fa-fw fa-lg"></i>
+            </div>
+            <div class="like-button mr-0">
+              <i class="far fa-heart liked"></i>
+              <span class="like-count">1</span>
+            </div>
+          </div>
+        </div>
+        <div class="answer-container">
+          <p class="answer-text">時間にルーズだと思われないように、１次会の後は速やかに帰る。</p>
+          <div class="answer-bottom">
+            <div class="sns-buttons ml-0 mr-auto">
+              <i class="fab fa-twitter fa-fw fa-lg"></i>
+              <i class="fab fa-facebook-square fa-fw fa-lg"></i>
+            </div>
+            <div class="like-button mr-0">
+              <i class="far fa-heart not-liked"></i>
+              <span class="like-count">0</span>
+            </div>
+          </div>
+        </div>
+        <a href="#" class="btn read-more-manners">
+          合コンでのマナーをもっと読む
+        </a>
+      </div>
 
     </div>
     <div class="side-container col-md-3 ml-5">
-      <div class="side-content card">
-<%= render partial: "layouts/weekly_user_ranking" %>
-      </div>
-      <div class="side-content card">
-<%= render partial: "layouts/favorite_subject" %>
-      </div>
-      <div class="side-content card">
-        <p class="card-title">広告</p>
-      </div>
+      <%= render partial: "shared/right_side_container" %>
     </div>
   </div>
   <div class="col-md-1"></div>

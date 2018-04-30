@@ -1,0 +1,18 @@
+<%= render partial: "shared/nav_bar" %>
+<%= render partial: "shared/header_img" %>
+<div class="container">
+  <%= render partial: "shared/header_nav" %>
+  <div class="row content-area">
+    <div class="main-container col-md-7">
+
+      <% @subjects.each do |subject| %>
+      <div class="card subject-container">
+      <%= render partial: "shared/subject_container", locals: { title: subject.title, posted_by: subject.user.name } %>
+      </div>
+      <% end %>
+    </div>
+    <div class="side-container col-md-3 ml-5">
+      <%= render partial: "shared/right_side_container" %>
+    </div>
+  </div>
+</div>

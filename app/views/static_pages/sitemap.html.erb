@@ -1,0 +1,22 @@
+<%= render partial: 'shared/nav_bar' %>
+<%= render partial: 'shared/header_img' %>
+<div class='container'>
+  <%= render partial: 'shared/header_nav' %>
+  <div class='row content-area'>
+        <%= link_to '登録', new_user_registration_path, class: '' %>
+        <%= link_to 'ログイン', new_user_session_path, class: '' %>
+        <%= link_to 'お題投稿', new_subject_path, class: '' %>
+        <%= link_to 'お題一覧（あとでページャ）(投稿数0のときだけ削除等)', subjects_path, class: '' %>
+        <%= link_to 'カテゴリ投稿（管理用）', new_category_path, class: '' %>
+        <%= link_to 'ログイン', new_user_session_path, class: '' %>
+        <%= link_to 'ログイン', new_user_session_path, class: '' %>
+        <%= link_to 'ログイン', new_user_session_path, class: '' %>
+        <%= link_to 'ログイン', new_user_session_path, class: '' %>
+        <%= link_to 'ログイン', new_user_session_path, class: '' %>
+
+    </div>
+    <div class='side-container col-md-3 ml-5'>
+      <%= render partial: 'shared/right_side_container' %>
+    </div>
+  </div>
+</div>

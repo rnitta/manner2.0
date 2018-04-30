@@ -1,2 +1,17 @@
-<h1>Categories#edit</h1>
-<p>Find me in app/views/categories/edit.html.erb</p>
+<h1>カテゴリ編集</h1>
+<%= form_for @category, url: { action: :update } do |f| %>
+<%= f.label :name, 'カテゴリ名' %>
+<%= f.text_field :name %>
+<%= f.label :friendly_id, 'friendly_id' %>
+<%= f.text_field :friendly_id%>
+
+<% if @category.errors.any? %>
+  <h2>エラー</h2>
+  <ul>
+    <% @category.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+<%= f.submit "更新" %>
+<% end %>
