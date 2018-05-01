@@ -31,12 +31,13 @@ ActiveRecord::Schema.define(version: 20180429110806) do
 
   create_table "manners", force: :cascade do |t|
     t.integer "user_id"
+    t.integer "subject_id"
     t.string "title", null: false
-    t.text "description", null: false
     t.integer "star", default: 0, null: false
     t.integer "pv", default: 0, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["subject_id"], name: "index_manners_on_subject_id"
     t.index ["user_id"], name: "index_manners_on_user_id"
   end
 
