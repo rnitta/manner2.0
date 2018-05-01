@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   resources :subjects, only: %i[new create show edit update destroy index] do
     resources :manners, only: %i[new create show edit update destroy index]
   end
+  get 'ogp', to: 'ogp#tw_subject'
   resources :categories, only: %i[new create show edit update destroy index]
   get 'mock/top', to: 'mock#top'
   get 'sitemap', to: 'static_pages#sitemap'

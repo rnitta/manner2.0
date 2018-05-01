@@ -1,0 +1,2 @@
+module OgpHelper
+end
