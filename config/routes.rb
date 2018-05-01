@@ -9,9 +9,10 @@ Rails.application.routes.draw do
   }
   get 'users/mypage', to: 'users#mypage'
   resources :users, only: %i[show]
-  resources :subjects, only: %i[new create show edit update destroy index]
+  resources :subjects, only: %i[new create show edit update destroy index] do
+    resources :manners, only: %i[new create show edit update destroy index]
+  end
   resources :categories, only: %i[new create show edit update destroy index]
-  resources :manners, only: %i[new create show edit update destroy index]
   get 'mock/top', to: 'mock#top'
   get 'sitemap', to: 'static_pages#sitemap'
 end

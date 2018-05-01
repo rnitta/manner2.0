@@ -1,9 +1,8 @@
 <div class="subject-card">
-  <p class="subject-text"><%= title %>を教えてください。</p>
-  <p class="subject-posted-by text-right">(お題提供: <%= posted_by %>)</p>
+  <p class="subject-text"><%= subject.title %>を教えてください。</p>
+  <p class="subject-posted-by text-right">(お題提供: <%= subject.user.name %>)</p>
   <div class="sns-buttons ml-0 mr-auto">
     <i class="fab fa-twitter fa-fw fa-2x"></i>
     <i class="fab fa-facebook-square fa-fw fa-2x"></i>
   </div>
 </div>
-<%= render partial: "shared/subject_bottom", locals: { title: '採用面接でのマナー', posted_by: '管理人'} %>

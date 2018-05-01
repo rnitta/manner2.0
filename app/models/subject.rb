@@ -15,5 +15,6 @@
 class Subject < ApplicationRecord
   belongs_to :user
   belongs_to :category
+  has_many :manners
   validates :title, uniqueness: { scope: :category_id }
 end

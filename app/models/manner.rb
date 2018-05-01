@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 # == Schema Information
 #
 # Table name: manners
@@ -14,7 +15,7 @@
 
 class Manner < ApplicationRecord
   belongs_to :user
-  belongs_to :category
+  belongs_to :subject
   validates :title, presence: true, length: { maximum: 255 }
   validates :description, presence: true
   validates :category_id, presence: true

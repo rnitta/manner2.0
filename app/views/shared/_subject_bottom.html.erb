@@ -1,8 +1,8 @@
 <div class="subject-bottom">
   <div class="subject-bottom-link-col">
-    マナーを投稿する
+    <%= link_to 'マナーを投稿する', new_subject_manner_path(subject), class: '' %>
   </div>
   <div class="subject-bottom-link-col">
-    回答一覧(n)
+    <%= link_to '回答一覧(n)', subject_manners_path(subject), class: '' %>
   </div>
 </div>

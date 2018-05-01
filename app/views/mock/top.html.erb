@@ -7,7 +7,7 @@
     <div class="col-md-1"></div>
     <div class="main-container col-md-7">
       <div class="card subject-container">
-      <%= render partial: "shared/subject_container", locals: { title: '採用面接でのマナー', posted_by: '管理人'} %>
+      <%= render partial: "shared/subject_container", locals: { subject: Subject.find(1) } %>
 
         <div class="answer-container">
           <p class="answer-text">一発芸に備えて、動きやすい服装で訪問する。</p>
