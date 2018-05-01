@@ -3,12 +3,11 @@ class OgpController < ApplicationController
   def tw_subject
     text = 'Hello, World'
     size = 30
-    img = Magick::Image.new(1200, 630) { self.background_color = '#336699' }
-    img = Magick::ImageList.open('frontend/img/tw_subject.png')
+    img = Magick::Image.read('app/frontend/img/tw_subject.png')[0]
     draw = Magick::Draw.new
     draw.annotate(img, 0, 0, 50, 100 + size, text) do
       self.font = 'Verdana-Bold'
-      self.fill = '#FFFFFF'
+      self.fill = '#000'
       self.align = Magick::LeftAlign
       self.stroke = 'transparent'
       self.pointsize = 30
