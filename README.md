@@ -1,10 +1,23 @@
 # README
 
-# 登録フロー
-`users/new`
-メールアドレスだけ登録
+## Requirement
+yarn
+```
+brew install yaen
+```
 
-`users/init/:id`
-deviseでメールアドレス確認後の初回情報登録
+## Install
+```
+$ bundle install
+$ rails db:migrate
+$ rails db:seed
+$ rails s
+```
 
-→サインアップ完了・ログイン
+access `localhost:3000`
+
+## メモ
+seederに
+email: test@test.test
+password: testtest
+のダミーユーザーデータあり〼
