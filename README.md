@@ -3,12 +3,12 @@
 ## Requirement
 yarn
 ```
-brew install yaen
+brew install yarn
 ```
 
 ## Install
 ```
-$ bundle install
+$ bundle install --path vendor/
 $ rails db:migrate
 $ rails db:seed
 $ rails s
