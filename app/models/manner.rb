@@ -6,7 +6,6 @@
 #  id          :integer          not null, primary key
 #  user_id     :integer
 #  title       :string           not null
-#  description :text             not null
 #  star        :integer          default(0), not null
 #  pv          :integer          default(0), not null
 #  created_at  :datetime         not null

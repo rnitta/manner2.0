@@ -45,7 +45,8 @@
       background-color: #AAD6EC;
       color: #fff;
       border-radius: 10px;
-      a{
+
+      a {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -55,4 +56,12 @@
       }
     }
   }
+}
+
+.post-something-container {
+  width: 500px;
+  background-color: #fff;
+  border-radius: 10px;
+  margin-top: 20px;
+  padding: 20px;
 }
