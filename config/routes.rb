@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     sessions: 'users/sessions',
     confirmations: 'users/confirmations'
   }
-  get 'users/mypage', to: 'users#mypage'
+  get 'mypage', to: 'users#mypage'
   resources :users, only: %i[show]
   resources :subjects, only: %i[new create show edit update destroy index] do
     resources :manners, only: %i[new create show edit update destroy index]

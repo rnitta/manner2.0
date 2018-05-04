@@ -14,7 +14,7 @@ class MannersController < ApplicationController
   def create
     @manner = Manner.new(manner_params)
     @manner.user_id = current_user.id
-    @manner.category_id = params[:category_id]
+    @manner.subject_id = params[:subject_id]
     if @manner.save
       redirect_to @manner.subject
     else

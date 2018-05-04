@@ -1,1 +1,31 @@
-mypage
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.4/Chart.bundle.min.js"></script>
+<%= javascript_pack_tag 'mypage' %>
+<%= render partial: "shared/nav_bar" %>
+<%= render partial: "shared/header_img" %>
+<div class="container">
+  <%= render partial: "shared/header_nav" %>
+  <div class="row content-area">
+    <div class="main-container col-md-8">
+      <div class="mydata card">
+        <div class="chart-container">
+          <canvas id="rader-chart"></canvas>
+        </div>
+        <hr>
+        <h2>最近投稿したマナー</h2>
+        <% current_user.manners.each do |manner| %>
+        <div class="mypage-manner-container"><%= manner.title %></div>
+        <% end %>
+        <hr>
+        <h2>最近投稿したお題</h2>
+        <% current_user.subjects.each do |subject| %>
+        <%= subject.title %>
+        <% end %>
+        <hr>
+        <h2>最近のいいね</h2>
+      </div>
+    </div>
+    <div class="side-container col-md-4">
+      <%= render partial: "shared/mypage_right_menu" %>
+    </div>
+  </div>
+</div>
