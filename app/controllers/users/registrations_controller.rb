@@ -54,7 +54,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # ユーザー情報更新後のリダイレクト先とフラッシュメッセージ変更
   def after_update_path_for(_resource)
     flash[:notice] = 'Account succesfully updated'
-    root_path
+    mypage_path
   end
 
   # パスワードなしでユーザー情報を変更

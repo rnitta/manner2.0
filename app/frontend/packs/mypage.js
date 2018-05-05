@@ -39,7 +39,7 @@ var config = {
       position: 'bottom'
     },
     title: {
-      display: true,
+      display: false,
       fontSize: 20,
       fontColor: '#666',
       text: 'マイデータ'

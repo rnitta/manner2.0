@@ -4,6 +4,9 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
   def mypage
+    # N+1用にviewで呼ばずに読んでおく
+    @manners = Manner.where(user_id: current_user.id).includes(:subject)
+    @subjects = Subject.where(user_id: current_user.id).includes(:manners)
   end
 
   private
