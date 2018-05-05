@@ -1,17 +1,17 @@
 # == Schema Information
 #
-# Table name: favorits
+# Table name: favorites
 #
 #  id         :integer          not null, primary key
-#  manner_id  :integer
 #  user_id    :integer
+#  manner_id  :integer
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
 
 require 'test_helper'
 
-class FavoritTest < ActiveSupport::TestCase
+class FavoriteTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
