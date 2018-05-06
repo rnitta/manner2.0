@@ -25,7 +25,6 @@ ActiveRecord::Schema.define(version: 20180506102407) do
     t.integer "manner_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "manners_count", default: 0, null: false
     t.index ["manner_id"], name: "index_favorites_on_manner_id"
     t.index ["user_id"], name: "index_favorites_on_user_id"
   end
