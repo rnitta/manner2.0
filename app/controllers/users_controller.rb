@@ -2,10 +2,10 @@
 class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
-    @manners = Manner.where(user_id: @user.id).order('id desc').includes(:subject)
-    @subjects = Subject.where(user_id: @user.id).order('id desc')
+    @manners = Manner.where(user_id: @user.id).order('id desc').includes(:subject).take(5)
+    @subjects = Subject.where(user_id: @user.id).order('id desc').take(5)
     # N+1用にこれやってるけど、mannerがid順にソートされて微妙かも（本来はmannerをfavoriteのid順で並べたい）
-    @favorites = @user.favorites.order('id desc').includes([:manner, manner: :subject])
+    @favorites = @user.favorites.order('id desc').includes([:manner, manner: :subject]).take(5)
     # どっかで Manner.counter_culture_fix_countsとFavorite.counter_culture_fix_counts　して定期的に整合性をもたせる
   end
 
