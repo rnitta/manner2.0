@@ -18,28 +18,13 @@
         </div>
         <hr>
         <h2>最近投稿したマナー</h2>
-        <% @manners.each do |manner| %>
-          <div class="mypage-manner-container">
-            <%= render partial: "shared/manner_container", locals: { manner: manner, subject: manner.subject } %>
-          </div>
-
-        <% end %>
+        <%= render partial: "shared/mypage_manners_container", collection: @manners %>
         <hr>
         <h2>最近投稿したお題</h2>
-        <% @subjects.each do |subject| %>
-          <div class="mypage-subject-container">
-            <p class="subject-text"><%= link_to subject.title+'を教えてください。', subject, class: '' %></p>
-            <p class="subject-size">回答数：<%= subject.manners_count.to_s %></p>
-          </div>
-        <% end %>
-
+        <%= render partial: "shared/mypage_subjects_container", collection: @subjects %>
         <hr>
         <h2>最近のいいね</h2>
-        <% @favorites.each do |favorite| %>
-          <div class="mypage-manner-container">
-            <%= render partial: "shared/manner_container", locals: { manner: favorite.manner, subject: favorite.manner.subject } %>
-          </div>
-        <% end %>
+        <%= render partial: "shared/mypage_favorites_container", collection: @favorites %>
       </div>
     </div>
     <div class="side-container col-md-4">

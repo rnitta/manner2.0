@@ -1,0 +1,21 @@
+<% manner = mypage_manners_container %>
+  <div class="mypage-manner-container">
+    <div class="answer-container">
+      <p class="manner-subject-text"><%= link_to 'お題：'+ manner.subject.title, manner.subject, class: '' %></p>
+      <p class="answer-text"><%= manner.title %></p>
+      <div class="answer-bottom">
+        <div class="sns-buttons ml-0 mr-auto">
+          <i class="fab fa-twitter fa-fw fa-lg"></i>
+          <i class="fab fa-facebook-square fa-fw fa-lg"></i>
+        </div>
+        <div class="like-button mr-0">
+          <% if manner.favorites.find_by(user_id: current_user.id).nil? %>
+            <i class="far fa-heart not-liked" data-manner-id="<%= manner.id.to_s %>"></i>
+          <% else %>
+            <i class="far fa-heart liked" data-manner-id="<%= manner.id.to_s %>"></i>
+          <% end %>
+          <span class="like-count manner-id-<%= manner.id.to_s %>"><%= manner.favorites_count.to_s %></span>
+        </div>
+      </div>
+    </div>
+  </div>

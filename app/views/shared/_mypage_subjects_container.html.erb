@@ -1,0 +1,5 @@
+<% subject = mypage_subjects_container %>
+<div class="mypage-subject-container">
+  <p class="subject-text"><%= link_to subject.title+'を教えてください。', subject, class: '' %></p>
+  <p class="subject-size">回答数：<%= subject.manners_count.to_s %></p>
+</div>

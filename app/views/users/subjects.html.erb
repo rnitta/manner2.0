@@ -1,0 +1,22 @@
+<%= javascript_pack_tag 'mypage' %>
+<%= render partial: "shared/nav_bar" %>
+<%= render partial: "shared/header_img" %>
+<div class="container">
+  <%= render partial: "shared/header_nav" %>
+  <div class="row content-area">
+    <div class="main-container col-md-8">
+      <div class="mydata card">
+        <h2><%= @user.name %>さんの最近投稿したお題</h2>
+        <%= paginate(@subjects) %>
+        <%= render partial: "shared/mypage_subjects_container", collection: @subjects %>
+      </div>
+    </div>
+    <div class="side-container col-md-4">
+      <% if params[:user_id] == current_user.id.to_s %>
+        <%= render partial: "shared/mypage_right_menu" %>
+      <% else %>
+        <%= render partial: "shared/right_side_container" %>
+      <% end %>
+    </div>
+  </div>
+</div>

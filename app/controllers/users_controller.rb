@@ -9,6 +9,21 @@ class UsersController < ApplicationController
     # どっかで Manner.counter_culture_fix_countsとFavorite.counter_culture_fix_counts　して定期的に整合性をもたせる
   end
 
+  def manners
+    @user = User.find(params[:user_id])
+    @manners = @user.manners.order('id desc').page(params[:page]).includes(:subject)
+  end
+
+  def subjects
+    @user = User.find(params[:user_id])
+    @subjects = @user.subjects.order('id desc').page(params[:page])
+  end
+
+  def favorites
+    @user = User.find(params[:user_id])
+    @favorites = @user.favorites.order('id desc').page(params[:page]).includes([:manner, manner: :subject])
+  end
+
   private
 
   def user_params

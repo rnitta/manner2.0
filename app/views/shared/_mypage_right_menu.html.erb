@@ -8,13 +8,13 @@
       <%= link_to "ユーザー情報変更", edit_user_registration_path, class: 'mypage-menu-link' %>
     </li>
     <li class="list-group-item">
-      最近投稿したマナー一覧
+        <%= link_to "投稿したマナー一覧", user_manners_path(current_user), class: 'mypage-menu-link' %>
     </li>
     <li class="list-group-item">
-      最近投稿したお題一覧
+      <%= link_to "投稿したお題一覧", user_subjects_path(current_user), class: 'mypage-menu-link' %>
     </li>
     <li class="list-group-item">
-      最近のいいね一覧
+      <%= link_to "いいね一覧", user_favorites_path(current_user), class: 'mypage-menu-link' %>
     </li>
   </ul>
 </div>

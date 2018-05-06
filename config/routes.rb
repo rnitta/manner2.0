@@ -13,7 +13,11 @@ Rails.application.routes.draw do
     confirmations: 'users/confirmations'
   }
   # ↓usersのルーティングはdeviseより下に置かないと/users/editとかがパス被ってエラー出る
-  resources :users, only: %i[show]
+  resources :users, only: %i[show] do
+    get 'manners', to: 'users#manners'
+    get 'subjects', to: 'users#subjects'
+    get 'favorites', to: 'users#favorites'
+  end
   get 'ogp', to: 'ogp#tw_subject'
   get 'sitemap', to: 'static_pages#sitemap'
   get 'mock/top', to: 'mock#top'
