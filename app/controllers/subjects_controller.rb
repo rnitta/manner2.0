@@ -3,7 +3,7 @@ class SubjectsController < ApplicationController
   # 便宜上全部通してるけどあとで権限設定ちゃんとする
   before_action :set_subject, only: %i[show destroy]
   def index
-    @subjects = Subject.all
+    @subjects = Subject.all.includes(:user)
   end
 
   def new
