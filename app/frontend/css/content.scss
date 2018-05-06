@@ -68,3 +68,18 @@
   margin-top: 20px;
   padding: 20px;
 }
+
+nav.pagination {
+  margin: auto;
+
+  > span {
+    padding: 5px 10px;
+    margin: 5px;
+    border: 1px solid #000;
+    background-color: #fff;
+    border-radius: 5px;
+    a {
+      color: black;
+    }
+  }
+}
