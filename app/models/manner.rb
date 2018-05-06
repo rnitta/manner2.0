@@ -16,6 +16,7 @@
 class Manner < ApplicationRecord
   belongs_to :user
   belongs_to :subject
+  counter_culture :subject
   has_many :favorites
   validates :title, presence: true, length: { maximum: 255 }, uniqueness: { scope: :subject_id }
   validates :subject_id, presence: true

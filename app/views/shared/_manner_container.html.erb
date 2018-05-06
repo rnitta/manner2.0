@@ -14,7 +14,7 @@
       <% else %>
       <i class="far fa-heart liked" data-manner-id="<%= manner.id.to_s %>"></i>
       <% end %>
-      <span class="like-count manner-id-<%= manner.id.to_s %>"><%= manner.favorites.size %></span>
+      <span class="like-count manner-id-<%= manner.id.to_s %>"><%= manner.favorites_count.to_s %></span>
     </div>
   </div>
 </div>

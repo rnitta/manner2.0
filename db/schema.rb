@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180505120656) do
+ActiveRecord::Schema.define(version: 20180506102407) do
 
   create_table "categories", force: :cascade do |t|
     t.string "name", null: false
@@ -25,17 +25,9 @@ ActiveRecord::Schema.define(version: 20180505120656) do
     t.integer "manner_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "manners_count", default: 0, null: false
     t.index ["manner_id"], name: "index_favorites_on_manner_id"
     t.index ["user_id"], name: "index_favorites_on_user_id"
-  end
-
-  create_table "favorits", force: :cascade do |t|
-    t.integer "manner_id"
-    t.integer "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["manner_id"], name: "index_favorits_on_manner_id"
-    t.index ["user_id"], name: "index_favorits_on_user_id"
   end
 
   create_table "manners", force: :cascade do |t|
@@ -46,6 +38,7 @@ ActiveRecord::Schema.define(version: 20180505120656) do
     t.integer "pv", default: 0, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "favorites_count", default: 0, null: false
     t.index ["subject_id"], name: "index_manners_on_subject_id"
     t.index ["user_id"], name: "index_manners_on_user_id"
   end
@@ -56,6 +49,7 @@ ActiveRecord::Schema.define(version: 20180505120656) do
     t.string "title", default: "", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "manners_count", default: 0, null: false
     t.index ["category_id"], name: "index_subjects_on_category_id"
     t.index ["user_id"], name: "index_subjects_on_user_id"
   end
