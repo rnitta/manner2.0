@@ -2,7 +2,7 @@
   <p class="card-title">メニュー</p>
   <ul class="list-group">
     <li class="list-group-item">
-      <%= link_to "マイページ", mypage_path, class: 'mypage-menu-link' %>
+      <%= link_to "マイページ", current_user, class: 'mypage-menu-link' %>
     </li>
     <li class="list-group-item">
       <%= link_to "ユーザー情報変更", edit_user_registration_path, class: 'mypage-menu-link' %>
@@ -12,6 +12,9 @@
     </li>
     <li class="list-group-item">
       最近投稿したお題一覧
+    </li>
+    <li class="list-group-item">
+      最近のいいね一覧
     </li>
   </ul>
 </div>

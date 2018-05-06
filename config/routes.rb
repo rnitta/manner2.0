@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 Rails.application.routes.draw do
   root to: 'mock#top'
-  resources :users, only: %i[show]
   resources :categories, only: %i[new create show edit update destroy index]
   resources :favorites, only: %i[create destroy]
   resources :subjects, only: %i[new create show edit update destroy index] do
@@ -13,7 +12,8 @@ Rails.application.routes.draw do
     sessions: 'users/sessions',
     confirmations: 'users/confirmations'
   }
-  get 'mypage', to: 'users#mypage'
+  # ↓usersのルーティングはdeviseより下に置かないと/users/editとかがパス被ってエラー出る
+  resources :users, only: %i[show]
   get 'ogp', to: 'ogp#tw_subject'
   get 'sitemap', to: 'static_pages#sitemap'
   get 'mock/top', to: 'mock#top'

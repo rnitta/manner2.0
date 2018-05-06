@@ -2,11 +2,10 @@
 class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
-  end
-  def mypage
-    # N+1用にviewで呼ばずに読んでおく
-    @manners = Manner.where(user_id: current_user.id).includes(:subject)
-    @subjects = Subject.where(user_id: current_user.id).includes(:manners)
+    @manners = Manner.where(user_id: @user.id).includes(:subject).order('id desc')
+    @subjects = Subject.where(user_id: @user.id).includes(:manners).order('id desc')
+    # N+1用にこれやってるけど、mannerがid順にソートされて微妙かも（本来はmannerをfavoriteのid順で並べたい）
+    @favorites = @user.favorites.includes([:manner, manner: :subject]).order('id desc')
   end
 
   private

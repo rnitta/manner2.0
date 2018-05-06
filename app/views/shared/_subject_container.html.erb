@@ -1,6 +1,6 @@
 <div class="subject-card">
   <p class="subject-text"><%= subject.title %>を教えてください。</p>
-  <p class="subject-posted-by text-right">(お題提供: <%= subject.user.name %>)</p>
+  <p class="subject-posted-by text-right"><%= link_to '(お題提供: ' + subject.user.name + ')', subject.user, class: 'subject-user-link' %></p>
   <div class="sns-buttons ml-0 mr-auto">
     <i class="fab fa-twitter fa-fw fa-2x"></i>
     <i class="fab fa-facebook-square fa-fw fa-2x"></i>

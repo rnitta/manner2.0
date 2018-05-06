@@ -1,4 +1,7 @@
 <div class="answer-container">
+<% if defined?(subject) %>
+  <p class="manner-subject-text"><%= link_to 'お題：'+ subject.title, subject, class: '' %></p>
+<% end %>
   <p class="answer-text"><%= manner.title %></p>
   <div class="answer-bottom">
     <div class="sns-buttons ml-0 mr-auto">

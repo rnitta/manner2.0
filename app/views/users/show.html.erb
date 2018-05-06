@@ -1,2 +1,54 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.4/Chart.bundle.min.js"></script>
+<%= javascript_pack_tag 'mypage' %>
+<%= render partial: "shared/nav_bar" %>
+<%= render partial: "shared/header_img" %>
+<div class="container">
+  <%= render partial: "shared/header_nav" %>
+  <div class="row content-area">
+    <div class="main-container col-md-8">
+      <div class="mydata card">
+        <h2>プロフィール</h2>
+        <div class="profile-container">
+          <p class="profile-name">
+            <strong><%= current_user.name %></strong>さん</p>
+          <p class="profile-profile">一言：<%= current_user.profile %></p>
+        </div>
+        <div class="chart-container">
+          <canvas id="rader-chart"></canvas>
+        </div>
+        <hr>
+        <h2>最近投稿したマナー</h2>
+        <% @manners.each do |manner| %>
+          <div class="mypage-manner-container">
+            <%= render partial: "shared/manner_container", locals: { manner: manner, subject: manner.subject } %>
+          </div>
+
+        <% end %>
+        <hr>
+        <h2>最近投稿したお題</h2>
+        <% @subjects.each do |subject| %>
+          <div class="mypage-subject-container">
+            <p class="subject-text"><%= link_to subject.title+'を教えてください。', subject, class: '' %></p>
+            <p class="subject-size">回答数：<%= subject.manners.size %></p>
+          </div>
+        <% end %>
+
+        <hr>
+        <h2>最近のいいね</h2>
+        <% @favorites.each do |favorite| %>
+          <div class="mypage-manner-container">
+            <%= render partial: "shared/manner_container", locals: { manner: favorite.manner, subject: favorite.manner.subject } %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+    <div class="side-container col-md-4">
+      <% if params[:id] == current_user.id.to_s %>
+        <%= render partial: "shared/mypage_right_menu" %>
+      <% else %>
+        <%= render partial: "shared/right_side_container" %>
+      <% end %>
+    </div>
+  </div>
+</div>
+<%= javascript_pack_tag 'like' %>

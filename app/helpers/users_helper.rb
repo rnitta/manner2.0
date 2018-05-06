@@ -13,4 +13,5 @@ module UsersHelper
     redirect_to root_path unless true
     # redirect_to root_path unless current_user&.admin
   end
+
 end
