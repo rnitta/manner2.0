@@ -2,23 +2,37 @@
 <%= render partial: "shared/header_img" %>
 <div class="container">
   <%= render partial: "shared/header_nav" %>
-  <h1>お題投稿</h1>
-  # プレビューつけたい
-  <%= form_for @subject, url: { action: :create } do |f| %>
-  <%= f.label :title, 'お題' %>
-  <%= f.text_field :title %>
-  <%= f.label :category_id, 'カテゴリ' %>
-  <%= f.select :category_id, Category.all.pluck(:name, :id)%>
+  <div class="row content-area">
+    <div class="main-container col-md-8">
+      <div class="mydata card">
+        <h1>お題投稿</h1>
+        <%= form_for @subject, url: { action: :create }, class: '' do |f| %>
+        <div class="field">
+          <%= f.label :title, 'お題' %>
+          <%= f.text_field :title %>
 
-  <% if @subject.errors.any? %>
-    <h2>エラー</h2>
-    <ul>
-      <% @subject.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+        </div>
+        <div class="field">
+          <%= f.label :category_id, 'カテゴリ' %>
+          <%= f.select :category_id, Category.all.pluck(:name, :id), class: '' %>
+        </div>
+
+        <% if @subject.errors.any? %>
+          <h2>エラー</h2>
+          <ul>
+            <% @subject.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+        <% end %>
+        <div class="actions">
+          <%= f.submit "作成", class: 'btn btn-dark'%>
+        </div>
       <% end %>
-    </ul>
-  <% end %>
-  <%= f.submit "作成" %>
-<% end %>
-
+    </div>
+  </div>
+  <div class="side-container col-md-4">
+    <%= render partial: "shared/right_side_container" %>
+  </div>
+</div>
 </div>
