@@ -13,7 +13,7 @@
       <%= link_to 'マナーを投稿する', new_subject_manner_path(subject), class: '' %>
     </div>
     <div class="subject-bottom-link-col">
-      <%= link_to '回答一覧 (' + subject.manners_count.to_s + '件)', subject_manners_path(subject), class: '' %>
+      <%= link_to '回答一覧 (' + subject.manners_count.to_s + '件)', subject_path(subject), class: '' %>
     </div>
   </div>
 </div>

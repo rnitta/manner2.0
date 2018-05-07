@@ -21,6 +21,7 @@ class SubjectsController < ApplicationController
   end
 
   def show
+    @manners = @subject.manners.order('id desc').includes(:user)
   end
 
   def destroy

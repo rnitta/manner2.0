@@ -12,7 +12,8 @@
   }
 }
 
-.subject-container {
+.subject-container,
+.subject-show-container {
   padding: 10px;
   margin-bottom: 50px;
 
@@ -68,9 +69,11 @@
   margin-top: 20px;
   padding: 20px;
 }
-.index-subject-pager{
+
+.index-subject-pager {
   width: 100%;
 }
+
 nav.pagination {
   display: flex;
   justify-content: center;
@@ -82,10 +85,61 @@ nav.pagination {
     border: 1px solid #000;
     background-color: #fff;
     border-radius: 5px;
+
     a {
       width: 100%;
       height: 100%;
       color: black;
+    }
+  }
+}
+
+.subject-show-container {
+  .answer-container {
+    box-shadow: 2px 2px 4px gray;
+    margin: 10px 10px 30px;
+  }
+
+  .answer-text {
+    background-color: #fff;
+    padding: 24px;
+    font-size: 1.5rem;
+  }
+
+  .answer-posted-by {
+    a {
+      color: #797979;
+    }
+    color: #797979;
+  }
+
+  .answer-bottom {
+    background-color: #5B5B5B;
+    display: flex;
+    flex-direction: row;
+    padding: 0 10px;
+
+    .sns-buttons {
+      font-family: "FontAwesome";
+      color: #fff;
+    }
+
+    i {
+      text-decoration: none;
+      font-style: normal;
+    }
+
+    .like-button {
+      font-family: "FontAwesome";
+      color: #fff;
+
+      .not-liked {
+        color: #fff;
+      }
+
+      .liked {
+        color: #FC9D9D;
+      }
     }
   }
 }
