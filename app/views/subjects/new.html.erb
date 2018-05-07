@@ -4,17 +4,17 @@
   <%= render partial: "shared/header_nav" %>
   <div class="row content-area">
     <div class="main-container col-md-8">
-      <div class="mydata card">
+      <div class="form-container card">
         <h1>お題投稿</h1>
         <%= form_for @subject, url: { action: :create }, class: '' do |f| %>
         <div class="field">
           <%= f.label :title, 'お題' %>
-          <%= f.text_field :title %>
-
+          <%= f.text_field :title, class: 'mx-auto' %>
+          <p class="subject-description mx-auto">例）　就活のマナー　結婚式のマナー etc</p>
         </div>
         <div class="field">
           <%= f.label :category_id, 'カテゴリ' %>
-          <%= f.select :category_id, Category.all.pluck(:name, :id), class: '' %>
+          <%= f.select :category_id, Category.all.pluck(:name, :id),{}, class: 'mx-auto' %>
         </div>
 
         <% if @subject.errors.any? %>

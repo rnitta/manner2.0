@@ -3,7 +3,7 @@ class SubjectsController < ApplicationController
   # 便宜上全部通してるけどあとで権限設定ちゃんとする
   before_action :set_subject, only: %i[show destroy]
   def index
-    @subjects = Subject.all.includes(:user)
+    @subjects = Subject.all.order('id desc').page(params[:page]).includes(:user)
   end
 
   def new

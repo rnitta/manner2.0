@@ -1,0 +1,19 @@
+<% subject = subject_index_container %>
+<div class="card subject-container">
+  <div class="subject-card">
+    <p class="subject-text"><%= subject.title %>を教えてください。</p>
+    <p class="subject-posted-by text-right"><%= link_to '(お題提供: ' + subject.user.name + ')', subject.user, class: 'subject-user-link' %></p>
+    <div class="sns-buttons ml-0 mr-auto">
+      <i class="fab fa-twitter fa-fw fa-2x"></i>
+      <i class="fab fa-facebook-square fa-fw fa-2x"></i>
+    </div>
+  </div>
+  <div class="subject-bottom">
+    <div class="subject-bottom-link-col">
+      <%= link_to 'マナーを投稿する', new_subject_manner_path(subject), class: '' %>
+    </div>
+    <div class="subject-bottom-link-col">
+      <%= link_to '回答一覧 (' + subject.manners_count.to_s + '件)', subject_manners_path(subject), class: '' %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,36 @@
+.form-container {
+  padding: 20px;
+
+  .field {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 30px;
+
+    input {
+      width: 80%;
+    }
+
+    p.subject-description {
+      width: 80%;
+    }
+
+    #subject_title {
+      padding: 10px;
+    }
+
+    #subject_category_id {
+      height: 3rem;
+      width: 80%;
+      background-color: #fff;
+    }
+
+    #manner_title {
+      padding: 10px;
+    }
+  }
+
+  .actions {
+    text-align: center;
+  }
+}

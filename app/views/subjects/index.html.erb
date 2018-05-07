@@ -4,13 +4,11 @@
   <%= render partial: "shared/header_nav" %>
   <div class="row content-area">
     <div class="main-container col-md-8">
-
-      <% @subjects.each do |subject| %>
-        <div class="card subject-container">
-          <%= render partial: "shared/subject_container", locals: { subject: subject } %>
-          <%= render partial: "shared/subject_bottom", locals: { subject: subject } %>
-        </div>
-      <% end %>
+      <div class="index-subject-pager">
+        <h1>お題一覧(新着順)</h1>
+        <%= paginate(@subjects) %>
+      </div>
+      <%= render partial: "shared/subject_index_container", collection: @subjects %>
     </div>
     <div class="side-container col-md-4">
       <%= render partial: "shared/right_side_container" %>

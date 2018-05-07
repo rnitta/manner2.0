@@ -1,29 +1,6 @@
-.mydata {
+.mydata{
   background-color: #fff;
   padding: 20px;
-
-  .field {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    margin-bottom: 30px;
-
-    input {
-      width: 80%;
-    }
-    #subject_title{
-      padding: 10px;
-    }
-    #subject_category_id{
-      height: 3rem;
-      width: 80%;
-      background-color: #fff;
-    }
-  }
-
-  .actions {
-    text-align: center;
-  }
 
   h2 {
     margin-bottom: 20px;

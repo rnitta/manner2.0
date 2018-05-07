@@ -4,27 +4,34 @@
   <%= render partial: "shared/header_nav" %>
   <div class="row content-area">
     <div class="main-container col-md-7">
-<div class="card subject-container">
-  <%= render partial: "shared/subject_container", locals: { subject: @subject } %>
-      <h2>マナー投稿</h2>
+      <div class="card form-container new-manner-container">
+        <div class="subject-container">
+          <%= render partial: "shared/subject_container", locals: { subject: @subject } %>
+        </div>
+        <h2>マナー投稿</h2>
 
-      <%= form_for @manner, url: { action: :create } do |f| %>
-      <%= f.label :title, '回答' %>
-      <%= f.text_field :title %>
+        <%= form_for @manner, url: { action: :create } do |f| %>
+        <div class="field">
+          <%= f.label :title, '回答' %>
+          <%= f.text_field :title, class: 'mx-auto' %>
+        </div>
 
-      <% if @manner.errors.any? %>
-        <h2>エラー</h2>
-        <ul>
-          <% @manner.errors.full_messages.each do |message| %>
-            <li><%= message %></li>
-          <% end %>
-        </ul>
+        <% if @manner.errors.any? %>
+          <h2>エラー</h2>
+          <ul>
+            <% @manner.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+        <% end %>
+        <div class="actions">
+          <%= f.submit "作成", class: 'btn btn-dark'%>
+        </div>
       <% end %>
-      <%= f.submit "作成" %>
-    <% end %>
-    </div>    </div>
-    <div class="side-container col-md-3 ml-5">
-      <%= render partial: "shared/right_side_container" %>
     </div>
   </div>
+  <div class="side-container col-md-3 ml-5">
+    <%= render partial: "shared/right_side_container" %>
+  </div>
+</div>
 </div>
