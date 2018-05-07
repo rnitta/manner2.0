@@ -21,7 +21,11 @@ class SubjectsController < ApplicationController
   end
 
   def show
-    @manners = @subject.manners.order('id desc').includes(:user)
+    if new_to_old?
+      @manners = @subject.manners.order('id desc').includes(:user)
+    else
+      @manners = @subject.manners.order('favorites_count desc').includes(:user)
+    end
   end
 
   def destroy

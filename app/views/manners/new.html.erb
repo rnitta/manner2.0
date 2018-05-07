@@ -3,7 +3,7 @@
 <div class="container">
   <%= render partial: "shared/header_nav" %>
   <div class="row content-area">
-    <div class="main-container col-md-7">
+    <div class="main-container col-md-8">
       <div class="card form-container new-manner-container">
         <div class="subject-container">
           <%= render partial: "shared/subject_container", locals: { subject: @subject } %>
@@ -30,7 +30,7 @@
       <% end %>
     </div>
   </div>
-  <div class="side-container col-md-3 ml-5">
+  <div class="side-container col-md-4">
     <%= render partial: "shared/right_side_container" %>
   </div>
 </div>

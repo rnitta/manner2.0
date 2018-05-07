@@ -6,6 +6,20 @@
     <div class="main-container col-md-8">
       <div class="subject-show-container card">
         <%= render partial: "shared/subject_container", locals: { subject: @subject } %>
+        <div class="post-answer-full">
+          <%= link_to 'マナーを投稿する', new_subject_manner_path(@subject), class: '' %>
+        </div>
+        <hr>
+        <div class="manners-h2-title">
+          <% if new_to_old? %>
+            <h2>新着順マナー一覧</h2>
+            <%= link_to '切替', subject_path(@subject, order: 'fav'), class: 'btn manner-switch-button' %>
+          <% else %>
+            <h2>いいね数順マナー一覧</h2>
+            <%= link_to '切替', subject_path(@subject, order: 'new'), class: 'btn manner-switch-button' %>
+          <% end %>
+        </div>
+        <p class="subject-manner-count text-right">回答マナー数：<%= @subject.manners_count %></p>
         <%= render partial: "shared/subject_show_manners_container", collection: @manners %>
       </div>
     </div>

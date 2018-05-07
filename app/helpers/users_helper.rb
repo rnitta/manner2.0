@@ -14,4 +14,7 @@ module UsersHelper
     # redirect_to root_path unless current_user&.admin
   end
 
+  def new_to_old?
+    params[:order].nil? || params[:order] == 'new'
+  end
 end
