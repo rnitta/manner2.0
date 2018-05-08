@@ -21,6 +21,7 @@ class SubjectsController < ApplicationController
   end
 
   def show
+    # FavoritesにN+1発生してるけど解決法が思いつかないので一旦放置
     if new_to_old?
       @manners = @subject.manners.order('id desc').includes(:user)
     else
