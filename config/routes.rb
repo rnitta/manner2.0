@@ -3,8 +3,8 @@ Rails.application.routes.draw do
   root to: 'mock#top'
   resources :categories, only: %i[new create show edit update destroy index]
   resources :favorites, only: %i[create destroy]
-  resources :subjects, only: %i[new create show edit update destroy index] do
-    resources :manners, only: %i[new create show edit update destroy index]
+  resources :subjects, only: %i[new create show destroy index] do
+    resources :manners, only: %i[new create destroy index]
   end
   devise_for :users, controllers:  {
     # deviseのコントローラをオーバーライドしてるやつを呼ぶ設定
