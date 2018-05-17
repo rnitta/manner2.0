@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180506102407) do
+ActiveRecord::Schema.define(version: 20180508014748) do
 
   create_table "categories", force: :cascade do |t|
     t.string "name", null: false
@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 20180506102407) do
     t.integer "count", default: 0, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "subjects_count", default: 0, null: false
   end
 
   create_table "favorites", force: :cascade do |t|

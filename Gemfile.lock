@@ -76,9 +76,13 @@ GEM
       railties (>= 4.1.0, < 6.0)
       responders
       warden (~> 1.2.3)
+    dotenv (0.7.0)
     erubi (1.7.1)
     execjs (2.7.0)
     ffi (1.9.23)
+    foreman (0.64.0)
+      dotenv (~> 0.7.0)
+      thor (>= 0.13.6)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
     i18n (1.0.1)
@@ -226,6 +230,7 @@ DEPENDENCIES
   capybara (~> 2.13)
   counter_culture
   devise
+  foreman
   jbuilder (~> 2.5)
   kaminari
   letter_opener
