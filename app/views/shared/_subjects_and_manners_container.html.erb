@@ -1,0 +1,47 @@
+<% subject = subjects_and_manners_container %>
+  <% manners = subject.manners %>
+
+    <div class="card subject-container">
+      <% # subject_containerだったもの %>
+
+        <div class="subject-card">
+          <p class="subject-text"><%= subject.title %>を教えてください。</p>
+          <p class="subject-posted-by text-right"><%= link_to '(お題提供: ' + subject.user.name + ')', subject.user, class: 'subject-user-link' %></p>
+          <div class="sns-buttons ml-0 mr-auto">
+            <i class="fab fa-twitter fa-fw fa-2x"></i>
+            <i class="fab fa-facebook-square fa-fw fa-2x"></i>
+          </div>
+        </div>
+        <% # subject_containerだったもの %>
+
+          <% manners.take(5).each do |manner| %>
+            <% # manner_containerだったもの %>
+
+              <div class="answer-container">
+                <p class="answer-text"><%= manner.title %></p>
+                <div class="answer-bottom">
+                  <div class="sns-buttons ml-0 mr-auto">
+                    <i class="fab fa-twitter fa-fw fa-lg"></i>
+                    <i class="fab fa-facebook-square fa-fw fa-lg"></i>
+                  </div>
+                  <div class="like-button mr-0">
+                    <% if user_signed_in? && manner.favorites.exists?(user_id: current_user.id) %>
+                      <i class="far fa-heart liked" data-manner-id="<%= manner.id.to_s %>"></i>
+                    <% else %>
+                      <i class="far fa-heart not-liked" data-manner-id="<%= manner.id.to_s %>"></i>
+                    <% end %>
+                    <span class="like-count manner-id-<%= manner.id.to_s %>"><%= manner.favorites_count.to_s %></span>
+                  </div>
+                </div>
+              </div>
+              <% # manner_containerだったもの %>
+              <% end %>
+              <%= link_to subject, class: 'btn read-more-manners' do %>
+              <%= subject.title %>
+              <% if manners.size > 5 %>
+                をもっと読む
+              <% else %>
+                のお題ページに飛ぶ
+              <% end %>
+            <% end %>
+          </div>

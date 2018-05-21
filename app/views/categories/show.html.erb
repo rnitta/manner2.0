@@ -1,2 +1,18 @@
-<h1>Categories#show</h1>
-<p>Find me in app/views/categories/show.html.erb</p>
+<%= render partial: "shared/nav_bar" %>
+<%= render partial: "shared/header_img" %>
+<div class="container">
+  <%= render partial: "shared/header_nav" %>
+  <div class="row content-area">
+    <div class="main-container col-md-8">
+      <div class="category-show-container">
+        <%= paginate @subjects, outer_window: 4 %>
+            <%= render partial: "shared/subjects_and_manners_container", collection: @subjects %>
+      <%= paginate @subjects, outer_window: 4 %>
+    </div>
+  </div>
+  <div class="side-container col-md-4">
+    <%= render partial: "shared/right_side_container" %>
+  </div>
+</div>
+</div>
+<%= javascript_pack_tag 'like' %>

@@ -88,6 +88,10 @@ nav.pagination {
   justify-content: center;
   margin: 20px 0;
 
+  span.current{
+    background-color: #EEF9FF;
+  }
+
   > span {
     padding: 5px 10px;
     margin: 5px;
