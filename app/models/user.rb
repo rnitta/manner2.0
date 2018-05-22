@@ -33,6 +33,7 @@ class User < ApplicationRecord
   has_many :manners
   has_many :subjects
   has_many :favorites
+  has_one :user_ranking
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :confirmable
   validates :profile, length: { maximum: 255 }
