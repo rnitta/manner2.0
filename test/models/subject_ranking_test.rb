@@ -1,9 +1,9 @@
 # == Schema Information
 #
-# Table name: user_rankings
+# Table name: subject_rankings
 #
 #  id         :integer          not null, primary key
-#  user_id    :integer
+#  subject_id :integer
 #  rank       :integer
 #  value      :integer
 #  created_at :datetime         not null
@@ -12,7 +12,7 @@
 
 require 'test_helper'
 
-class UserRankingTest < ActiveSupport::TestCase
+class SubjectRankingTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

@@ -1,15 +1,8 @@
 <p class="card-title">人気のテーマ</p>
 <ul class="list-group">
-  <li class="list-group-item">
-    就活のマナー
-  </li>
-  <li class="list-group-item">
-    合コンのマナー
-  </li>
-  <li class="list-group-item">
-    新幹線でのマナー
-  </li>
-  <li class="list-group-item">
-    ネットカフェでのマナー
-  </li>
+  <% SubjectRanking.top5.each do |subjectrank| %>
+    <li class="list-group-item">
+      <%= link_to(subjectrank.subject.title, subjectrank.subject, class: 'subject-rank-link') %>
+    </li>
+  <% end %>
 </ul>

@@ -17,5 +17,6 @@ class Subject < ApplicationRecord
   belongs_to :category
   counter_culture :category
   has_many :manners
+  has_one :subject_ranking
   validates :title, uniqueness: { scope: :category_id }
 end

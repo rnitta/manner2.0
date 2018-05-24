@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180521232333) do
+ActiveRecord::Schema.define(version: 20180524140758) do
 
   create_table "categories", force: :cascade do |t|
     t.string "name", null: false
@@ -41,6 +41,15 @@ ActiveRecord::Schema.define(version: 20180521232333) do
     t.integer "favorites_count", default: 0, null: false
     t.index ["subject_id"], name: "index_manners_on_subject_id"
     t.index ["user_id"], name: "index_manners_on_user_id"
+  end
+
+  create_table "subject_rankings", force: :cascade do |t|
+    t.integer "subject_id"
+    t.integer "rank"
+    t.integer "value"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["subject_id"], name: "index_subject_rankings_on_subject_id"
   end
 
   create_table "subjects", force: :cascade do |t|

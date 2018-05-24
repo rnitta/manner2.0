@@ -26,4 +26,15 @@ namespace :update_ranking do
       end
     end
   end
+  desc 'テーマランキング更新(投稿数)'
+  task subject_by_manners: :environment do
+    SubjectRanking.delete_all
+    Subject.all.each do |subject|
+      if SubjectRanking.create(subject: subject, value: subject.manners.size)
+        p "OK!#{subject.title}"
+      else
+        p "エラー#{subject.title}"
+      end
+    end
+  end
 end

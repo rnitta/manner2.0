@@ -1,5 +1,6 @@
 <p class="user-ranking card-title">週間ユーザランキング</p>
-<table class="table  table-hover">
+
+<table class="table table-hover">
   <thead>
     <tr>
       <th>#</th>
@@ -7,28 +8,14 @@
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <th>1</th>
-      <td>大喜利太郎</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>大喜利太郎</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>大喜利太郎</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>大喜利太郎</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>大喜利太郎</td>
-    </tr>
+    <% UserRanking.top5.each_with_index do |userrank, i| %>
+      <tr>
+        <th><%= i+1 %></th>
+        <td>
+          <%= link_to(userrank.user.name, userrank.user, class: 'user-ranking-link') %>
+        </td>
+      </tr>
+    <% end %>
   </tbody>
 </table>
-<a href="#" class="btn read-more-user-ranking">
-  もっと見る
-</a>
+<!-- <a href="#" class="btn read-more-user-ranking"> もっと見る </a> -->

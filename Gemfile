@@ -9,6 +9,7 @@ end
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'
 
+gem 'active_decorator'
 gem 'annotate'
 gem 'bcrypt', '~> 3.1.7'
 gem 'counter_culture'
