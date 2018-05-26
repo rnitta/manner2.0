@@ -18,6 +18,7 @@ Rails.application.routes.draw do
     get 'subjects', to: 'users#subjects'
     get 'favorites', to: 'users#favorites'
   end
+  resources :ogp, only: %i[show]
   get 'ogp', to: 'ogp#tw_subject'
   get 'sitemap', to: 'static_pages#sitemap'
   get 'mock/top', to: 'mock#top'
