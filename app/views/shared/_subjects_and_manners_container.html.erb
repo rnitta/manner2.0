@@ -12,6 +12,10 @@
             <i class="fab fa-facebook-square fa-fw fa-2x"></i>
           </div>
         </div>
+        <div class="post-answer-full">
+          <%= link_to 'マナーを投稿する', new_subject_manner_path(subject), class: '' %>
+        </div>
+
         <% # subject_containerだったもの %>
 
           <% manners.take(5).each do |manner| %>

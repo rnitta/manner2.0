@@ -2,4 +2,7 @@
 class StaticPagesController < ApplicationController
   def sitemap
   end
+
+  def top
+  end
 end

@@ -4,9 +4,23 @@
 
   a.category-index-list-link {
     color: #5b5b5b;
+    .badge-primary {
+      background-color: #AAD6EC;
+    }
   }
+
 }
 
-.category-show-container{
+.category-show-container {
 
+}
+
+.subject-container{
+  .answer-container{
+    .answer-text {
+      background-color: #fff;
+      padding: 24px;
+      font-size: 1.5rem;
+    }
+  }
 }
