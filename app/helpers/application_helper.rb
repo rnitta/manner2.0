@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 module ApplicationHelper
-
   def admin?
     # 管理権限をチェック
     redirect_to root_path unless current_user&.admin
@@ -13,7 +12,7 @@ module ApplicationHelper
       title: Settings.site.page_title,
       description: Settings.site.page_description,
       keywords: Settings.site.page_keywords,
-      canonical: request.original_url,
+      canonical: request.base_url + request.path,
       og: {
         title: :title,
         type: Settings.site.meta.ogp.type,
