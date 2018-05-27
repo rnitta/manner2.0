@@ -1,5 +1,11 @@
 # frozen_string_literal: true
 module ApplicationHelper
+
+  def admin?
+    # 管理権限をチェック
+    redirect_to root_path unless current_user&.admin
+  end
+
   def default_meta_tags
     {
       site: Settings.site.name,

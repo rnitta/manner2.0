@@ -7,13 +7,6 @@ module UsersHelper
     end
   end
 
-  def admin?
-    # 管理権限をチェック
-    # あとで切り替える
-    redirect_to root_path unless true
-    # redirect_to root_path unless current_user&.admin
-  end
-
   def new_to_old?
     params[:order].nil? || params[:order] == 'new'
   end

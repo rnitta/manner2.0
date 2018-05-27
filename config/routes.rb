@@ -19,6 +19,7 @@ Rails.application.routes.draw do
     get 'favorites', to: 'users#favorites'
   end
   resources :ogp, only: %i[show]
+  resources :inquiries, only: %i[index new create]
   get 'ogp', to: 'ogp#tw_subject'
   get 'sitemap', to: 'static_pages#sitemap'
   get 'mock/top', to: 'mock#top'

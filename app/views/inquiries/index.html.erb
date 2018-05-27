@@ -1,0 +1,26 @@
+<%= render partial: "shared/nav_bar" %>
+<%= render partial: "shared/header_img" %>
+<div class="container">
+  <%= render partial: "shared/header_nav" %>
+  <div class="row content-area">
+    <div class="main-container col-md-8">
+      @inquieis
+      <% @inquieis.each do |inquiry| %>
+      <div class="inquiry-index">
+        <p class="inquiry-col"><%= inquiry.id %></p>
+        <p class="inquiry-col"><%= inquiry.user.name %></p>
+        <p class="inquiry-col"><%= inquiry.user.name %></p>
+        <p class="inquiry-col"><%= inquiry.title %></p>
+        <p class="inquiry-col"><%= inquiry.content %></p>
+      </div>
+      <% end %>
+    </div>
+    <div class="side-container col-md-4">
+      <% if params[:id] == current_user.id.to_s %>
+        <%= render partial: "shared/mypage_right_menu" %>
+      <% else %>
+        <%= render partial: "shared/right_side_container" %>
+      <% end %>
+    </div>
+  </div>
+</div>
