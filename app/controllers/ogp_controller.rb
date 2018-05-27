@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 class OgpController < ApplicationController
+  require 'RMagick'
   def show
     @subject = Subject.find(params[:id])
     ogp_for_twitter
