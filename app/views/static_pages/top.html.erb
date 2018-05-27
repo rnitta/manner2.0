@@ -9,7 +9,9 @@
         お題を探す
 
       </div>
-      <div class="new-arrived-manners"></div>
+      <div class="new-arrived-manners">
+        <%= render partial: "shared/manner_subject_container", collection: @manners %>
+      </div>
 
     </div>
     <div class="side-container col-md-4">
