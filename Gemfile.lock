@@ -116,6 +116,7 @@ GEM
       thor (~> 0.19.1)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
+    hirb (0.7.3)
     i18n (1.0.1)
       concurrent-ruby (~> 1.0)
     inflecto (0.0.2)
@@ -269,6 +270,7 @@ DEPENDENCIES
   counter_culture
   devise
   foreman
+  hirb
   jbuilder (~> 2.5)
   kaminari
   letter_opener
