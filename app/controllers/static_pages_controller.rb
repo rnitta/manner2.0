@@ -4,6 +4,6 @@ class StaticPagesController < ApplicationController
   end
 
   def top
-    @manners = Manner.includes(subject: :user)
+    @manners = Manner.page(params[:page]).per(10).includes(subject: :user)
   end
 end

@@ -1,0 +1,7 @@
+<div class="top-instructions card">
+  <%= render partial: "instruction" %>
+</div>
+<div class="new-arrived-manners">
+  <%= render partial: "shared/component/manner_subject", locals: {manners: manners} %>
+  <%= paginate manners %>
+</div>

@@ -1,18 +1,8 @@
-<%= render partial: "shared/nav_bar" %>
-<%= render partial: "shared/header_img" %>
 <div class="container">
-  <%= render partial: "shared/header_nav" %>
-
+  <%= render(partial: 'shared/component/heading')%>
   <div class="row content-area">
     <div class="main-container col-md-8">
-      <div class="top-instructions">
-        お題を探す
-
-      </div>
-      <div class="new-arrived-manners">
-        <%= render partial: "shared/manner_subject_container", collection: @manners %>
-      </div>
-
+      <%= render(partial: 'shared/container/top_main', locals: {manners: @manners}) %>
     </div>
     <div class="side-container col-md-4">
       <%= render partial: "shared/right_side_container" %>
@@ -20,5 +10,4 @@
   </div>
   <div class="col-md-1"></div>
 </div>
-</div>
-<%= javascript_pack_tag 'like' %>
+<%= javascript_pack_tag 'like' if user_signed_in? %>

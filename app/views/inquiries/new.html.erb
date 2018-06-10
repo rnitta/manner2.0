@@ -1,16 +1,17 @@
-<%= render partial: "shared/nav_bar" %>
-<%= render partial: "shared/header_img" %>
 <div class="container">
-  <%= render partial: "shared/header_nav" %>
+  <%= render partial: "shared/component/heading" %>
   <div class="row content-area">
     <div class="main-container col-md-8">
       <div class="inquiry-container form-container">
         <%= form_for @inquiry, url: { action: :create } do |f| %>
-        <%= f.label :title, '件名' %>
-        <%= f.text_field :title %>
-        <%= f.label :content, '内容' %>
-        <%= f.text_area :content%>
-
+        <div class="field">
+          <%= f.label :title, '件名' %>
+          <%= f.text_field :title, class: 'mx-auto' %>
+        </div>
+        <div class="field">
+          <%= f.label :content, '内容' %>
+          <%= f.text_area :content %>
+        </div>
         <% if @inquiry.errors.any? %>
           <h2>エラー</h2>
           <ul>

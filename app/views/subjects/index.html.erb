@@ -1,7 +1,5 @@
-<%= render partial: "shared/nav_bar" %>
-<%= render partial: "shared/header_img" %>
 <div class="container">
-  <%= render partial: "shared/header_nav" %>
+  <%= render partial: "shared/component/heading" %>
   <div class="row content-area">
     <div class="main-container col-md-8">
       <div class="index-subject-pager">
@@ -9,6 +7,7 @@
         <%= paginate(@subjects) %>
       </div>
       <%= render partial: "shared/subject_index_container", collection: @subjects %>
+      <%= paginate(@subjects) %>
     </div>
     <div class="side-container col-md-4">
       <%= render partial: "shared/right_side_container" %>

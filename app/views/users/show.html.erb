@@ -1,9 +1,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.4/Chart.bundle.min.js"></script>
 <%= javascript_pack_tag 'mypage' %>
-<%= render partial: "shared/nav_bar" %>
-<%= render partial: "shared/header_img" %>
 <div class="container">
-  <%= render partial: "shared/header_nav" %>
+  <%= render partial: "shared/component/heading" %>
   <div class="row content-area">
     <div class="main-container col-md-8">
       <div class="mydata card">
@@ -13,9 +11,9 @@
             <strong><%= current_user.name %></strong>さん</p>
           <p class="profile-profile">一言：<%= current_user.profile %></p>
         </div>
-        <div class="chart-container">
+        <!-- <div class="chart-container">
           <canvas id="rader-chart"></canvas>
-        </div>
+        </div> -->
         <hr>
         <h2>最近投稿したマナー</h2>
         <%= render partial: "shared/mypage_manners_container", collection: @manners %>
