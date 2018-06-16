@@ -1,7 +1,8 @@
 # frozen_string_literal: true
 class MannersController < ApplicationController
   # 権限設定やる
-  before_action :authenticate_user!, only: %i[new create destroy]
+  before_action :authenticate_user!, only: %i[new create]
+  before_action :admin?, only: %i[destroy]
   before_action :set_manner, only: %i[show destroy]
   def index
   end

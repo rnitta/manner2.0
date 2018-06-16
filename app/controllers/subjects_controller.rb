@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 class SubjectsController < ApplicationController
   # 便宜上全部通してるけどあとで権限設定ちゃんとする
+  before_action :admin?, only: %i[destroy]
+  before_action :authenticate_user!, only: %i[new create]
   before_action :set_subject, only: %i[show destroy]
   def index
     @subjects = Subject.all.order('id desc').page(params[:page]).includes(:user)
