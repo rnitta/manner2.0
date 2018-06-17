@@ -1,30 +1,32 @@
 <div class="container">
-  <div class="sign-up-container mx-auto">
+  <div class="sign-up-container form-container mx-auto">
     <h2>新規登録</h2>
 
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= devise_error_messages! %>
-
+<br />
       <div class="field">
-        <%= f.label :email %><br />
-        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+        <%= f.label :email %>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'mx-auto' %>
       </div>
-
+<br />
       <div class="field">
-        <%= f.label :password %>
-        <% if @minimum_password_length %>
-        <em>(<%= @minimum_password_length %>文字以上)</em>
-        <% end %><br />
-        <%= f.password_field :password, autocomplete: "off" %>
+        <%= f.label :name, 'ニックネーム' %>
+        <%= f.text_field :name, class: 'mx-auto' %>
       </div>
-
+<br />
       <div class="field">
-        <%= f.label :password_confirmation %><br />
-        <%= f.password_field :password_confirmation, autocomplete: "off" %>
+        <%= f.label :password, 'パスワード(6文字以上)' %>
+        <%= f.password_field :password, autocomplete: "off", class: 'mx-auto' %>
+      </div>
+<br />
+      <div class="field">
+        <%= f.label :password_confirmation %>
+        <%= f.password_field :password_confirmation, autocomplete: "off", class: 'mx-auto' %>
       </div>
 
       <div class="actions">
-        <%= f.submit "登録" %>
+        <%= f.submit "登録", class: 'btn btn-dark' %>
       </div>
     <% end %>
 
