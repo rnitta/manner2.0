@@ -13,7 +13,7 @@
 #
 
 class UserRanking < ApplicationRecord
-  belongs_to :user
+  belongs_to :user, dependent: :destroy
 
   scope :top5, lambda {
     current_scope.order('value desc').limit(5).includes(:user)
