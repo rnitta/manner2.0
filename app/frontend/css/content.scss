@@ -1,9 +1,19 @@
-.color-white{
+.color-white {
   color: white;
 }
-.color-blue{
+
+.color-blue {
   color: #AAD6EC;
 }
+
+a.color-white:visited {
+  color: white;
+}
+
+a.color-blue:visited {
+  color: #AAD6EC;
+}
+
 .subject-card {
   .sns-buttons {
     text-align: left;
@@ -94,7 +104,7 @@ nav.pagination {
   justify-content: center;
   margin: 20px 0;
 
-  span.current{
+  span.current {
     background-color: #EEF9FF;
   }
 
