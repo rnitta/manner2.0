@@ -23,7 +23,7 @@ module ApplicationHelper
         locale: 'ja_JP'
       },
       twitter: {
-        card: 'summarylargeimage'
+        card: 'summary_large_image'
       }
     }
   end
@@ -34,7 +34,7 @@ module ApplicationHelper
         title: "#{subject.title}を教えてください。 | #{Settings.site.name}",
         type: Settings.site.meta.ogp.type,
         url: subject_url(subject),
-        image: ogp_url(subject.id),
+        image: ogp_url(subject.id) + '.png',
         site_name: Settings.site.name,
         description: :description,
         locale: 'ja_JP'
