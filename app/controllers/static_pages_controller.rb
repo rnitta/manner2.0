@@ -4,6 +4,6 @@ class StaticPagesController < ApplicationController
   end
 
   def top
-    @manners = Manner.page(params[:page]).per(10).includes(subject: :user)
+    @manners = Manner.order('created_at desc').page(params[:page]).per(10).includes(subject: :user)
   end
 end
