@@ -2,8 +2,12 @@
   <p class="answer-text"><%= manner.title %></p>
   <div class="answer-bottom">
     <div class="sns-buttons ml-0 mr-auto">
-      <i class="fab fa-twitter fa-fw fa-lg"></i>
-      <i class="fab fa-facebook-square fa-fw fa-lg"></i>
+      <a href=<%= URI.encode("http://twitter.com/share?url=#{ subject_url(manner.subject) }&text=#{ manner.title }\n&hashtags=manner20,マナー大喜利") %> target="_blank" class="sns-post-link color-white">
+        <i class="fab fa-twitter fa-fw fa-lg"></i>
+      </a>
+      <a href=<%= "http://www.facebook.com/share.php?u=#{ subject_url(manner.subject) }" %> target="_blank" class="sns-post-link color-white" >
+        <i class="fab fa-facebook-square fa-fw fa-lg"></i>
+      </a>
     </div>
     <div class="like-button mr-0">
       <% if user_signed_in? && manner.favorites.exists?(user_id: current_user.id) %>
