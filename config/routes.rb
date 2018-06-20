@@ -23,4 +23,6 @@ Rails.application.routes.draw do
   get 'ogp', to: 'ogp#tw_subject'
   get 'sitemap', to: 'static_pages#sitemap'
   get 'mock/top', to: 'mock#top'
+
+  get '*path', controller: 'application', action: 'render_404'
 end
