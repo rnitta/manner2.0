@@ -1,0 +1,10 @@
+= javascript_pack_tag 'hello_elm'
+.container
+  = render(partial: 'shared/component/heading')
+  .row.content-area
+    .main-container.col-md-8
+      = render(partial: 'shared/container/top_main', locals: {manners: @manners})
+    .side-container.col-md-4
+      = render partial: "shared/right_side_container"
+  .col-md-1
+= javascript_pack_tag 'like' if user_signed_in?
